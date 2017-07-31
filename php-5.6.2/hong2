@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+i=1;
+
+
+hong() {
+	
+	STR="define $1"
+       
+        FILE="/tmp/hong_$i.txt"           
+
+	find ./ -name '*.h' | xargs grep "$STR" 
+
+
+
+
+
+
+}
+
+
+hong $1;
+
+
+
+
+
+
+
+
+
+
+
+

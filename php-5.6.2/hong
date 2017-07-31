@@ -1,0 +1,50 @@
+#!/bin/bash
+
+
+i=1;
+
+
+hong() {
+	
+	STR="define $1"
+       
+        FILE="/tmp/hong_$i.txt"           
+
+	find ./ -name '*.h' | xargs grep "$STR"  > $FILE
+
+
+
+
+	while read line
+
+	do
+              i=$(($i + 1))
+
+
+  	 	echo $line;
+
+ 	 	FF=`echo $line | cut -d " " -f 3`
+
+              #  echo $FF
+                hong $FF
+
+
+	done <$FILE
+
+
+}
+
+
+hong $1;
+
+
+
+
+
+
+
+
+
+
+
+
